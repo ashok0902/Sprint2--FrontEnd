@@ -1,0 +1,202 @@
+// Color variables
+$primary-color: #2c3e50; // Deep blue-grey for buttons and accents
+$secondary-color: #e74c3c; // Soft red for danger elements
+$background-gradient-start: #e0f7fa; // Very light blue for body background start
+$background-gradient-end: #b2ebf2; // Soft blue for body background end
+$input-border-color: #bdc3c7; // Soft grey for input borders
+$input-focus-color: #3498db; // Light blue focus for inputs
+$card-background: #a6d4e9; // White background for card/form
+$shadow-color: rgba(0, 0, 0, 0.1); // Light shadow for hover effects
+$table-border-color: #e0e0e0; // Light grey for table borders
+$heading-color: #34495e; // Dark blue-grey for headings
+$text-muted: #7f8c8d; // Muted grey for labels and small text
+$modal-background-color: #1289c0; // Light grey for modal background
+
+// Background gradient with light blue tones
+body {
+  background: linear-gradient(135deg, $background-gradient-start 0%, $background-gradient-end 100%);
+  font-family: 'Segoe UI', sans-serif;
+  padding: 40px;
+  color: $heading-color;
+  min-height: 100vh; // Ensures full-page height
+}
+
+// Form container
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: $card-background;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); // Deeper shadow
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+// Form headings
+h4 {
+  font-weight: 700;
+  color: $heading-color;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+// Form controls and inputs
+.form-control {
+  border: 1px solid $input-border-color;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+
+  &:focus {
+    border-color: $input-focus-color;
+    box-shadow: 0 0 10px rgba($input-focus-color, 0.4);
+  }
+}
+
+// Labels
+label {
+  font-size: 15px;
+  color: $text-muted;
+  margin-bottom: 8px;
+  display: block;
+}
+
+// Buttons
+.btn {
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &.btn-primary {
+    background-color: $primary-color;
+    color: white;
+    border: none;
+
+    &:hover {
+      background-color: lighten($primary-color, 10%);
+      box-shadow: 0 5px 15px rgba($primary-color, 0.3);
+    }
+  }
+
+  &.btn-danger {
+    background-color: $secondary-color;
+    color: white;
+    border: none;
+
+    &:hover {
+      background-color: lighten($secondary-color, 10%);
+      box-shadow: 0 5px 15px rgba($secondary-color, 0.3);
+    }
+  }
+}
+
+// Form container shadow
+.shadow {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background-color: $card-background;
+  padding: 30px;
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// Table styling
+.table {
+  width: 100%;
+  margin-top: 30px;
+  background-color: $card-background;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  border-collapse: collapse;
+  overflow: hidden;
+  animation: slideUp 0.6s ease-in-out;
+
+  th, td {
+    padding: 16px;
+    text-align: center;
+  }
+
+  th {
+    background-color: $primary-color;
+    color: white;
+    font-weight: 600;
+  }
+
+  td {
+    border-bottom: 1px solid $table-border-color;
+    color: $heading-color;
+  }
+
+  tr:hover {
+    background-color: lighten($primary-color, 40%);
+  }
+}
+
+// Modal styling
+.modal-content {
+  border-radius: 12px;
+  background-color: $modal-background-color;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeInModal 0.5s ease-in-out;
+}
+
+// Animations
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInModal {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// Responsive design for mobile screens
+@media only screen and (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .form-control {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  table, th, td {
+    font-size: 14px;
+  }
+}
